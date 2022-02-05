@@ -1,0 +1,42 @@
+@model ProfileViewModel
+@{
+    ViewData["Title"] = "Update Profile";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header text-left">
+                <h5 class="title">Update Profile</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" placeholder="Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <div class="form-group">
+                                <label asp-for="ContactNo" class="control-label"></label>
+                                <input asp-for="ContactNo" class="form-control" placeholder="Contact No." />
+                                <span asp-validation-for="ContactNo" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-success" fill="">Save</button>
+                    </div>
+                    <input asp-for="id" type="hidden" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

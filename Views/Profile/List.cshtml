@@ -1,0 +1,57 @@
+@model IQueryable<ProfileViewModel>
+
+<div class="content">
+    <div class="row">
+        <div class="col-12">
+            <a class="btn btn-success" asp-action="Create">Create New</a>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header text-left">
+                    <h4 class="card-title">Profile List</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive text-left">
+                        <table class="table tablesorter">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th> ID</th>
+                                    <th> Name</th>
+                                    <th> Contact</th>
+                                </tr>
+
+                            </thead>
+                            <tbody class="">
+                                @foreach (var profileViewModel in Model)
+                                {
+                                    <tr>
+                                        <td>@profileViewModel.id</td>
+                                        <td>@profileViewModel.Name</td>
+                                        <td>@profileViewModel.ContactNo</td>
+                                        <td class="td-actions text-right">
+                                            <a type="button" class="btn btn-link" asp-action="Edit"
+                                            asp-route-id="@profileViewModel.id" artia-label="edit button">
+                                                <i class="tim-icons icon-pencil"></i>
+                                            </a>
+                                            <a type="button" class="btn btn-link" asp-action="Delete"
+                                            asp-route-id="@profileViewModel.id" artia-label="edit button">
+                                                <i class="tim-icons icon-trash-simple"></i>
+                                            </a>
+                                        </td>
+                                        @* <td class="td-actions text-right">
+                                            <a type="button" class="btn btn-link" asp-action="Edit"
+                                            asp-route-id="@userViewModel.id" artia-label="edit button">
+                                            <i class="tim-icons icon-trash-simple"></i>
+                                            </a>
+                                            </td> *@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
